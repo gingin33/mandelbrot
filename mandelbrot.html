@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="last_issue.css">
+    <title>マンデルブロ集合</title>
+</head>
+
+<body onload="reset()">
+    <h1>マンデルブロ集合生成</h1>
+    <div class="margin">
+        <br />計算回数<input type="text" id="num" value="500"></input><br />※数値を上げるほど図の精密度が上がりますが、計算に時間がかかり重くなるので注意
+        <br />R: <input type="range" id="red" value="2" max="256" min="0" step="2">
+        <br />G: <input type="range" id="green" value="4" max="256" min="0" step="2">
+        <br />B: <input type="range" id="blue" value="16" max="256" min="0" step="2">
+        <br /><span id="curValue"></span>Zn^1<input type="range" id="square" value="2" max="4" min="1" step="1">Zn^4<br />
+        <canvas id="Canvas" width="700" height="700"></canvas>
+        <canvas id="Canvas2" width="700" height="700"></canvas>
+        <br />※およそ10^15倍でモザイクがかります（計算限界のため）
+        <br /><input type="button" value="x10" class="magButton" id="zoom2" onclick="exeMandelbrot(0.1, 0, 0)"></input>
+        <input type="button" value="x2.0" class="magButton" id="zoom" onclick="exeMandelbrot(0.5, 0, 0)"></input>
+        <input type="button" value="x1.0" class="magButton" id="std" onclick="exeMandelbrot(1.0, 0, 0)"></input>
+        <input type="button" value="x0.5" class="magButton" id="shrink" onclick="exeMandelbrot(2.0, 0, 0)"></input>
+        <input type="button" value="x0.1" class="magButton" id="shrink2" onclick="exeMandelbrot(10, 0, 0)"></input>
+        <br /><input type="button" value="↑" id="up" class="arrowButton" onclick="exeMandelbrot(1.0, 0, -1)"></input>
+        <br /><input type="button" value="←" id="left" class="arrowButton" onclick="exeMandelbrot(1.0, -1, 0)"></input>
+        <span class="mgr-100"></span><input type="button" value="→" id="right" class="arrowButton" onclick="exeMandelbrot(1.0, 1, 0)"></input>
+        <br /><input type="button" value="↓" id="down" class="arrowButton" onclick="exeMandelbrot(1.0, 0, 1)"></input>
+        <br />移動倍率<input type="text" id="move" value="1000"></input>
+        <br />
+        <br /><input type="button" value="保存" class="saveButton" onclick="saveImage()"></input>
+        <input type="button" value="リセット" class="resetButton" onclick="reset()"></input>
+        <br />
+        <br />
+        <a href="julia.html">ジュリア集合生成へ</a>
+    </div>
+    <script src="mandelbrot.js"></script>
+</body>
+</html>

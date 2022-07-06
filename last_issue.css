@@ -1,0 +1,52 @@
+.mgr-100{
+    margin-left: 20px;
+}
+
+h1{
+    font-size: xx-large;
+    text-align: center;
+    background-color: aquamarine;
+}
+
+.margin{
+    text-align: center;
+}
+.saveButton{
+    font-size: 1em;
+    background-color: lightskyblue;
+    font-family: "ヒラギノ角ゴ StdN W8";
+}
+
+.saveButton:hover{
+    background-color: lightslategrey;
+}
+
+.resetButton{
+    font-size: 1em;
+    background-color: darkgray;
+    border-style: none;
+    font-family: "ヒラギノ角ゴ StdN W8";
+}
+
+.resetButton:hover{
+    background-color: lightslategrey;
+}
+
+.magButton{
+    font-size: 1em;
+    background-color: darkgray;
+    border-style: none;
+}
+
+.magButton:hover{
+    background-color: darkslategrey;
+}
+
+.arrowButton{
+    background-color: darkgray;
+    border-style: none;
+}
+
+.arrowButton:hover{
+    background-color: darkslategrey;
+}
